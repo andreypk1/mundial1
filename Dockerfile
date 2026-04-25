@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk
 
 COPY "./target/mundial-1.jar" "app.jar"
 
