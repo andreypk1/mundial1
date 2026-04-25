@@ -1,4 +1,4 @@
-FROM openjdk:17.0.12
+FROM openjdk:17
 
 COPY "./target/mundial-1.jar" "app.jar"
 
