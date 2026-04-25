@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head('Formulario Club')"></head>
+
+<body>
+
+<div th:replace="layout :: navbar"></div>
+
+<div class="container mt-4">
+
+<div class="card card-custom p-4 shadow">
+
+<h3 class="mb-4 text-center text-dark">🏆 Formulario Club</h3>
+
+<form th:action="@{/club/guardar}" th:object="${club}" method="post">
+
+<input type="hidden" th:field="*{id}" />
+
+<div class="mb-3">
+<label class="text-dark">Nombre</label>
+<input class="form-control" th:field="*{nombre}" required />
+</div>
+
+<div class="mb-3">
+<label class="text-dark">Ubicación</label>
+<input class="form-control" th:field="*{ubicacion}" />
+</div>
+
+<div class="mb-3">
+<label class="text-dark">Estadio</label>
+<input class="form-control" th:field="*{estadio}" />
+</div>
+
+<div class="mb-3">
+<label class="text-dark">Año Fundación</label>
+<input type="number" class="form-control" th:field="*{anioFundacion}" />
+</div>
+
+<!-- ENTRENADOR -->
+<div class="mb-3">
+<label class="text-dark">Entrenador</label>
+<select class="form-control" th:field="*{entrenador.id}">
+<option value="">-- Seleccione --</option>
+<option th:each="e : ${entrenadores}" 
+        th:value="${e.id}" 
+        th:text="${e.nombre}">
+</option>
+</select>
+</div>
+
+<!-- ASOCIACION -->
+<div class="mb-3">
+<label class="text-dark">Asociación</label>
+<select class="form-control" th:field="*{asociacion.id}">
+<option value="">-- Seleccione --</option>
+<option th:each="a : ${asociaciones}" 
+        th:value="${a.id}" 
+        th:text="${a.nombre}">
+</option>
+</select>
+</div>
+
+<!-- JUGADORES -->
+<div class="mb-3">
+<label class="text-dark">Jugadores</label>
+<select multiple class="form-control" th:field="*{jugadores}">
+<option th:each="j : ${jugadores}" 
+        th:value="${j.id}" 
+        th:text="${j.nombre}">
+</option>
+</select>
+</div>
+
+<div class="text-center">
+<button class="btn btn-success">Guardar</button>
+<a href="/club" class="btn btn-secondary">Volver</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<div th:replace="layout :: scripts"></div>
+
+</body>
+</html>

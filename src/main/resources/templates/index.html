@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head('Inicio')"></head>
+
+<body>
+
+<div th:replace="layout :: navbar"></div>
+
+<div class="container mt-5">
+
+<div class="text-center">
+
+<h1 class="display-4 fw-bold mb-3">⚽ Sistema Mundial</h1>
+
+<p class="lead mb-5">
+Gestiona clubes, jugadores, entrenadores y asociaciones
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- CLUB -->
+<div class="col-md-3">
+    <div class="card card-custom p-4 text-center shadow h-100">
+        <h3>🏆 Clubes</h3>
+        <p>Gestiona los clubes</p>
+        <a href="/club" class="btn btn-primary btn-custom">Entrar</a>
+    </div>
+</div>
+
+<!-- JUGADOR -->
+<div class="col-md-3">
+    <div class="card card-custom p-4 text-center shadow h-100">
+        <h3>⚽ Jugadores</h3>
+        <p>Administra jugadores</p>
+        <a href="/jugador" class="btn btn-success btn-custom">Entrar</a>
+    </div>
+</div>
+
+<!-- ENTRENADOR -->
+<div class="col-md-3">
+    <div class="card card-custom p-4 text-center shadow h-100">
+        <h3>🎯 Entrenadores</h3>
+        <p>Control de entrenadores</p>
+        <a href="/entrenador" class="btn btn-warning btn-custom">Entrar</a>
+    </div>
+</div>
+
+<!-- ASOCIACIÓN -->
+<div class="col-md-3">
+    <div class="card card-custom p-4 text-center shadow h-100">
+        <h3>🌎 Asociaciones</h3>
+        <p>Organizaciones deportivas</p>
+        <a href="/asociacion" class="btn btn-dark btn-custom">Entrar</a>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div th:replace="layout :: scripts"></div>
+
+</body>
+</html>
